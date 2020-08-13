@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewData["Title"] = "getAllEmp";
+    List<Employee> emplist = (List<Employee>)ViewData["emplisttohtml"];
+}
+
+<h1>Landing page for get all employees</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Department
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var e in emplist)
+        {
+        <tr>
+            <td>
+                @e.Id
+            </td>
+            <td>
+                @e.name
+            </td>
+            <td>
+                @e.email
+            </td>
+            <td>
+                @e.Department.deptname
+            </td>
+        </tr>
+
+
+
+        }
+    </tbody>
+</table>

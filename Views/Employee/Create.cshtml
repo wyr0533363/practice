@@ -1,0 +1,60 @@
+﻿@model Employee
+
+
+@{
+    ViewData["Title"] = "Create";
+    List<Department> dlist = (List<Department>)ViewData["dlisttohtmal"];
+}
+    <h1>Create Employee</h1>
+
+<form method="post">
+
+
+    <div>
+        <label asp-for="name"></label>
+        <input asp-for="name" />
+    </div>
+
+
+    <div>
+        <label asp-for="password"></label>
+        <input asp-for="password">
+    </div>
+
+
+    <div>
+        <label asp-for="email"></label>
+        <input asp-for="email">
+    </div>
+
+    <div class="dropdown">
+        <label>Department: </label>
+        <select id="testmonkey" name="DepartmentId">
+            @foreach(Department d in dlist)
+            {
+                <option value="@d.Id">
+                    @d.deptname
+                </option>
+            }
+        </select>
+    </div>
+
+
+
+    <button formaction="/employee/save"> Click to Submit! </button>
+
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
